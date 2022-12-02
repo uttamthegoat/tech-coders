@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void insertion(int a[10],int n);
-void deletion(int a[10],int n);
-void arrdisplay(int a[10],int n);
+int a[10],i,n,choice,ele,pos;
+
+void insertion();
+void deletion();
+void arrdisplay();
             
 void main(){
-    int a[10],i,n,choice;
     printf("Enter the Number of elements\n");
     scanf("%d",&n);
     printf("Enter the elelmets\n");
@@ -19,37 +20,41 @@ void main(){
     scanf("%d",&choice);
       switch (choice)
     {
-    case 1 :n++;
-        insertion(a,n);
+    case 1 :
+        insertion();
         break;
 
     case 2 :
-        deletion(a,n);
-        n--;
+        deletion();
+        
         break;
 
     case 3 :
-        arrdisplay(a,n);
+        arrdisplay();
+        break;
+
+    case 4 :
+        exit(0);
         break;
     
-    default:printf("Invalid Input");
+    default:
+        printf("Invalid Input");
         break;
     }
     
-    if (!(choice==3))
+    if (!(choice==4))
     {
         goto again;
     }
 }
 
-void insertion(int a[10],int n){
-
-    int i,ele,pos;
+void insertion()
+{
     printf("Enter the element to be inserted\n");
     scanf("%d",&ele);
-    printf("Enter the position of element to be inserted\n");
+    printf("Enter the position of element to be deleted\n");
     scanf("%d",&pos);
-
+    n++;
     //insertion process
     for ( i = n; i >= pos-1; i-- )
     {
@@ -59,9 +64,9 @@ void insertion(int a[10],int n){
 
 }
 
-void deletion(int a[10],int n){
-    int i,ele,pos;
-    printf("Enter the element to be found\n");
+void deletion()
+{
+    printf("Enter the element to be deleted\n");
     scanf("%d",&ele);
     printf("Enter the position of element to be inserted\n");
     scanf("%d",&pos);
@@ -71,11 +76,12 @@ void deletion(int a[10],int n){
     {
         a[i]=a[i+1];
     }
+    n--;
 }
 
 
-void arrdisplay(int a[10],int n){
-    int i;
+void arrdisplay()
+{
     printf("the elements are\n");
     for ( i = 0; i < n; i++)
     {
