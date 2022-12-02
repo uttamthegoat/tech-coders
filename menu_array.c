@@ -5,6 +5,7 @@ int a[10],n,i,choice;
             
 void arr();
 void arrdisplay();
+void leave();
 
 void main(){
     
@@ -22,7 +23,7 @@ void main(){
         break;
 
     case 3 :
-        exit(0);
+        leave();
     
     default:printf("Invalid Input");
         break;
@@ -55,4 +56,9 @@ void arrdisplay()
         printf("%d\n",a[i]);
     }
     
+}
+
+void leave()
+{
+     exit(0);
 }
