@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int a[10],i,op,top,max,ele;
+int a[10],i,op,top=-1,max,ele;
 void push();
 void pop();
 void display();
@@ -8,7 +8,6 @@ void exit1();
 
 void main()
 {
-	top=-1;
 	printf("Enter the no of elements of a stack\n");
 	scanf("%d",&max);
 	do
