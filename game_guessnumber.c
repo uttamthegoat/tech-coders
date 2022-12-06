@@ -1,14 +1,16 @@
-// this is a number guesssing game
-//here the player gets 5 chances to guess a number between 1 to 5
-// the total score will be displayed at the end of the game
+//Number Guessing game
+//Here the player gets 5 chances to guess a number between 1 to 5
+//The total score will be displayed at the end of the game
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int num1, num2, score,i,try;
 
 void main()
 {
+    srand((unsigned int)time(NULL));
     printf("This is a number guessing game.\n");
     printf("Rules\n1.You will get 5 chances\n2.For every correct guess you will get 1 point.\n");
     printf("Let's begin\n");
@@ -18,7 +20,7 @@ void main()
     for (i = 0; i < try; i++)
     {
         printf("This is your %d chance\n",i+1);
-        printf("Guess a number between 1 to 5\n");
+        printf("Guess a number between 1 to 6\n");
         scanf("%d", &num1);
         num2 = rand() % 6;
         printf("The number is \n%d\n", num2);
