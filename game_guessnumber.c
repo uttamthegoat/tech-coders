@@ -7,7 +7,7 @@
 
 int num1, num2, score,i,try;
 
-int main()
+void main()
 {
     printf("This is a number guessing game.\n");
     printf("Rules\n1.You will get 5 chances\n2.For every correct guess you will get 1 point.\n");
@@ -33,5 +33,4 @@ int main()
         }
     }
     printf("Your total score is %d out of %d",score,try);
-    return 0;
 }
