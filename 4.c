@@ -37,7 +37,7 @@ void main()
 		symbol=postfix[i];	
 		if(isdigit(symbol))
 		{
-			stack[++top]=symbol;
+			stack[++top]=symbol-'0';
 		}
 		else
 		{
