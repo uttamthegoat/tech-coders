@@ -3,25 +3,27 @@
 #include<stdlib.h>
 #include<string.h>
 
-int stack[20],max,op1,op2,res,top=-1,i,ele;
-char post[30],operand;
+int stack[20],maxstack=10,op1,op2,res,top=-1,i,ans;
+char post[30];
 
-int compute();
+void compute();
 void insert();
 void push();
 
 void main()
 {
 	insert();
-	for(i=top;i>=0;i--)
-	{
-		printf("%d\n",stack[i]);
-	}
+	ans=stack[top--];
+	printf("%d",ans);
 }
 
-int compute()
+void compute()
 {
-	switch(operand)
+	op2=stack[top];
+	top=top-1;
+	op1=stack[top];
+	top=top-1;
+	switch(post[i])
 	{
 		case '+':res=op1+op2;
 		break;
@@ -44,38 +46,37 @@ int compute()
 		default:printf("Invalid Operand\n");
 		break;
 	}
-	return res;
+	stack[++top]=res;
 }
 
 void insert()
 {
 	printf("Enter the postfix expression\n");
-	scanf("%c",post);
+	gets(post);
 	
 	//seperation of symbols and operands
 	for(i=0;i<strlen(post);i++)
 	{
 		if(post[i]>='0' && post[i]<='9')
 		{
-			push(post[i]);
+			push();
 		}
 		else if(post[i]=='+'||post[i]=='-'||post[i]=='*'||post[i]=='/'||post[i]=='%'||post[i]=='^')
 		{
-			
+			compute();
 		}
 	}
 }
 
-void push(int ele)
+void push()
 {
-	if(top==max-1)
-	{	
-		printf("Overflow\n");
+	if(top==maxstack-1)
+	{
+		printf("Overflow");
 	}
 	else
 	{
-		printf("Enter the element to be pushed\n");
-		scanf("%d",&ele);
-		stack[++top]=ele;
+		top=top+1;
+		stack[top]=post[i]-'0';
 	}
 }
