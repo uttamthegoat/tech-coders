@@ -37,8 +37,8 @@ int main()
         {
             printf("\n\nRoll?\n\n");
             dice -= getche();
-            // dice = (rand() % 6) + 1;
-            dice=leastmoves();      //this function is to finish the game in least no. of moves as possible
+            dice = (rand() % 6) + 1;
+            //dice=leastmoves();      //this function is to finish the game in least no. of moves as possible
             printf("\nYou rolled a dice\n");
             printf("the number on the dice is %d\n", dice);
             position += dice;
