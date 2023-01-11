@@ -48,7 +48,12 @@ int main()
                 printf("Your current position is %d\n", position);
                 continue;
             }
-            printf("Your current position is %d\n", position);
+            if (position>100)
+            {
+                printf("Your current position is %d\n",100);
+            }
+            else
+                printf("Your current position is %d\n", position);
             moves++;
 
             // check the position of the player
